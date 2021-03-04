@@ -29,3 +29,5 @@ for index, i in enumerate(reports_folder.iterdir()):
         data = data.append(stanoks_utils, ignore_index=True)
 
 print(data)
+
+data.to_csv("report.csv",sep=',')

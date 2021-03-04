@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+# --------------------------------------
+# это жутчайший файл, не используйте его
+# --------------------------------------
+
+
+
+
+
 # здесь надо указать путь до папки, где лежат файлы отчётов гпсс, именованные по порядку
 #gpss_files_path=:$HOME/.wine/drive_c/'Program Files (x86)'/'Minuteman Software'/'GPSS World Student Version'/
 gpss_files_path=$(pwd)/reports
