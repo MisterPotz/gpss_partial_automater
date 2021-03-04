@@ -1,0 +1,23 @@
+RMULT 2991505, 8676789, 1773092, 3143011
+
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           7566.326    47        4          0
+
+                
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ ROBOT              300    0.951      23.984  1        0    0    0     0      0
+ STANOK1             75    0.168      16.964  1        0    0    0     0      0
+ STANOK2             75    0.169      17.095  1        0    0    0     0      0
+ STANOK3             75    0.169      17.079  1        0    0    0     0      0
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ FMS_IN             12    0     75      0     4.110    414.661    414.661   0
+ STANOK1_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK1_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK3_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK3_OUT         1    0     75     75     0.000      0.000      0.000   0
+ FMS_OUT            12    0     75      0     4.507    454.699    454.699   0
