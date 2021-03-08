@@ -6,8 +6,8 @@ from pandas.core.frame import DataFrame
 import argparse
 
 # CONSTS 
-first_n = 2
-second_n = 3
+first_n = 5
+second_n = 20
 
 parser = argparse.ArgumentParser()
 
@@ -25,50 +25,59 @@ print(reports_folder.name)
 
 # must format the output folder
 for i in reports_folder.iterdir():
-    print(i)
     # remove unnecessary data from file if possible
     lines = []
     with i.open('r') as file:
         lines = file.readlines()
     slice_index1 = -1
     slice_index2 = -1
-    pattern_name_value_block = re.compile(".*(NAME).*(VALUE).*")
-    pattern_facility_block = re.compile(".*(FACILITY).*")
-
+    pattern_name_value_block = re.compile(r".*(NAME).*(VALUE).*")
+    pattern_facility_block = re.compile(r".*(FACILITY).*")
+    pattern_header = re.compile(r".*(GPSS World Simulation Report).*")
 
     for index, line in enumerate(lines):
-        if re.fullmatch(pattern_name_value_block, line.strip()) is not None:
-            print(line)
+        if re.match(pattern_name_value_block, line.strip()) is not None:
+            print("matched name value block ", line)
             slice_index1 = index
             continue
-        if re.fullmatch(pattern_facility_block, line.strip()) is not None:
+        if re.match(pattern_facility_block, line.strip()) is not None:
+            print("matched facility block", line)
             slice_index2 = index
 
     if slice_index1 > -1:
-        lines1 = lines[6:10] + lines[slice_index2:]            
-        with i.open('w') as file:
-            file.writelines(lines1)
+        lines = lines[:slice_index1] + lines[slice_index2:]  
+    indices_to_filter = list()
+    for index, line in enumerate(lines):
+        if re.match(pattern_header, line.strip()) is not None:
+            indices_to_filter.extend(list(range(index, index + 4)))
+    lines = list(filter(lambda x: x[0] not in indices_to_filter, enumerate(lines)))
+    lines = list(map(lambda x: x[1], lines))
+
     if re.fullmatch(r".*(RMULT).*", lines[0].strip()) is None:
+        print("no RMULT found")
         order_index = i.name
         gpss_generated=Path("./gpss_experiment_scripts/")
         related_file_with_mult = gpss_generated.joinpath(f"{order_index}")
         first_line = None
         with related_file_with_mult.open('r') as file:
-            first_line = file.readlines()[0]
-    # on the end of the converted gpss file there are some bad symbols
+            lines1 = file.readlines()
+            first_line = lines1[0]
+        lines.insert(0, first_line)
 
-    for index, line in enumerate(lines):
-        if re.fullmatch(pattern_name_value_block, line.strip()) is not None:
+    # on the end of the file there are bad symbols
+    pattern_queue_entity =re.compile(r"[\s]*[A-Z0-9_]+[\s]+[0-9]+[\s]+[0-9]+.*")
+
+    queue_last = len(lines)
+    for index, line in enumerate(lines[::-1]):
+        if re.fullmatch(pattern_queue_entity, line.strip()) is not None:
             print(line)
-            slice_index1 = index
-            continue
-        if re.fullmatch(pattern_facility_block, line.strip()) is not None:
-            slice_index2 = index
+            queue_last = -index
+            break
+    if (queue_last < 0):
+        lines = lines[:queue_last]
     
     with i.open('w') as file:
-        lines1 = lines.copy()
-        lines1.insert(0, first_line)
-        file.writelines(lines1)
+        file.writelines(lines)
 
 
 # recreate the folder if necessary
