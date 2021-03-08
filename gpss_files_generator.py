@@ -5,8 +5,8 @@ import numpy as np
 parser = argparse.ArgumentParser()
 
 parser.add_argument('amount_of_experiments', help='How many experiments you need', type=int)
-parser.add_argument('amount_of_bases', help='How many bases ou need for distribution generators', type=int)
-parser.add_argument('path_to_main_script', help="Path to the whole script with a removed line of RMULT")
+parser.add_argument('amount_of_bases', help='How many generator bases you need for distribution generators', type=int)
+parser.add_argument('path_to_main_script', help="Path to the whole script without the removed line of RMULT")
 
 args = parser.parse_args()
 

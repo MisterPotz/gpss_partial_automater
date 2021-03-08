@@ -3,9 +3,17 @@ import sys
 import re
 import pandas as pd
 from pandas.core.frame import DataFrame
+import argparse
 
-path = sys.argv[1]
-target_column_index = int(sys.argv[2])
+parser = argparse.ArgumentParser()
+
+parser.add_argument('path', help='Path to the GPSS reports folders')
+parser.add_argument('--target_column_index', dest="target_column_index", help='Index of statistics target column (UTILIZATION by default is 2)', type=int, default=2)
+
+args = parser.parse_args()
+
+path = args.path
+target_column_index = args.target_column_index
 
 reports_folder = Path(path)
 
