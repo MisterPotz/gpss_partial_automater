@@ -14,7 +14,12 @@ print(reports_folder.name)
 print([x for x in reports_folder.iterdir()])
 
 data = pd.DataFrame()
-generated_files_list = []
+output_folder = Path("./output/")
+if output_folder.exists() and output_folder.is_dir():
+    for i in output_folder.iterdir():
+        i.unlink()
+    output_folder.rmdir()
+output_folder.mkdir()
 
 for index, i in enumerate(reports_folder.iterdir()):
     with open(i, 'r') as report:
@@ -32,8 +37,9 @@ for index, i in enumerate(reports_folder.iterdir()):
 print(data)
 
 raw_report_name = "raw_report.csv"
-data.to_csv(raw_report_name, index=False, sep=",")
-generated_files_list.append(raw_report_name)
+raw_report_path = output_folder.joinpath(raw_report_name)
+with raw_report_path.open('w') as file:
+    data.to_csv(file, index=False, sep=",")
 
 import numpy as np
 
@@ -43,7 +49,9 @@ def mean_disp(arr: np.array):
     disp = np.sum(disp) / ( arr.shape[0] - 1)
     return (mean, disp)
 
-raw_data = pd.read_csv("raw_report.csv", sep=',')
+raw_data = None
+with raw_report_path.open('r') as file:
+    raw_data = pd.read_csv(file, sep=',')
 raw_columns=raw_data.columns
 means_disps = \
     pd.DataFrame(columns=["Оценка мат. ожидания N = 5", 
@@ -60,9 +68,9 @@ for i in raw_columns:
     means_disps = means_disps.append(dict(zip(means_disps.columns, row)), ignore_index = True)
 means_disps.index = raw_columns
 means_and_disps_name = "means_and_disps.csv"
-means_disps.to_csv(means_and_disps_name, sep=",", index=True)
-
-generated_files_list.append(means_and_disps_name)
+means_path=output_folder.joinpath(means_and_disps_name)
+with means_path.open('w') as file:
+    means_disps.to_csv(file, index=True, sep=",")
 
 # confidence tables
 conf = pd.read_csv("confidence_interval.csv", index_col=0)
@@ -103,7 +111,8 @@ for i in raw_columns:
 
     framei.index = ['acc 0.1', 'acc 0.05']
     framei_name = f"stanok_conf_{i}.csv"
-    framei.to_csv(framei_name, sep=',', index=True)
-    generated_files_list.append(framei_name)
+    framei_path = output_folder.joinpath(framei_name)
+    with framei_path.open('w') as file:
+        framei.to_csv(file, sep=',', index=True)
 
-print(f"output files : {generated_files_list}")
+print(f"output files : {list(output_folder.iterdir())}")
