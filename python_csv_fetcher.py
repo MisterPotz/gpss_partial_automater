@@ -19,8 +19,7 @@ reports_folder = Path(path)
 
 print(reports_folder.name)
 
-# first must process the output
-
+# must format the output folder
 for i in reports_folder.iterdir():
     print(i)
     # remove unnecessary data from file if possible
@@ -56,6 +55,7 @@ for i in reports_folder.iterdir():
             file.writelines(lines1)
 
 
+# recreate the folder if necessary
 data = pd.DataFrame()
 output_folder = Path("./output/")
 if output_folder.exists() and output_folder.is_dir():
@@ -64,6 +64,8 @@ if output_folder.exists() and output_folder.is_dir():
     output_folder.rmdir()
 output_folder.mkdir()
 
+
+# create the raw data for all found stanoks
 for index, i in enumerate(reports_folder.iterdir()):
     with open(i, 'r') as report:
         print(f"reading file {i.name}")
@@ -79,6 +81,7 @@ for index, i in enumerate(reports_folder.iterdir()):
 
 print(data)
 
+# save as rawa report
 raw_report_name = "raw_report.csv"
 raw_report_path = output_folder.joinpath(raw_report_name)
 with raw_report_path.open('w') as file:
@@ -86,6 +89,7 @@ with raw_report_path.open('w') as file:
 
 import numpy as np
 
+# analyze means and dispersion 
 def mean_disp(arr: np.array):
     mean = arr.mean()
     disp =  (arr - mean) ** 2
@@ -115,7 +119,7 @@ means_path=output_folder.joinpath(means_and_disps_name)
 with means_path.open('w') as file:
     means_disps.to_csv(file, index=True, sep=",")
 
-# confidence tables
+# confidence table
 conf = pd.read_csv("confidence_interval.csv", index_col=0)
 
 def find_t(confidence_table, N, accuracy):
@@ -134,7 +138,7 @@ def confidence_interval(accuracy, arr):
 def prettify_confidence_interval(mean, disp):
     return f"{mean} +- {disp}"
 
-print(conf.columns)
+# find confidence interval for our data
 for i in raw_columns:
     framei = pd.DataFrame(columns=["N = 5", "N = 20"])
     columns = framei.columns
@@ -158,4 +162,5 @@ for i in raw_columns:
     with framei_path.open('w') as file:
         framei.to_csv(file, sep=',', index=True)
 
+# show newly created files
 print(f"output files : {list(output_folder.iterdir())}")
