@@ -5,6 +5,10 @@ import pandas as pd
 from pandas.core.frame import DataFrame
 import argparse
 
+# CONSTS 
+first_n = 2
+second_n = 3
+
 parser = argparse.ArgumentParser()
 
 parser.add_argument('path', help='Path to the GPSS reports folders')
@@ -31,6 +35,7 @@ for i in reports_folder.iterdir():
     pattern_name_value_block = re.compile(".*(NAME).*(VALUE).*")
     pattern_facility_block = re.compile(".*(FACILITY).*")
 
+
     for index, line in enumerate(lines):
         if re.fullmatch(pattern_name_value_block, line.strip()) is not None:
             print(line)
@@ -38,6 +43,7 @@ for i in reports_folder.iterdir():
             continue
         if re.fullmatch(pattern_facility_block, line.strip()) is not None:
             slice_index2 = index
+
     if slice_index1 > -1:
         lines1 = lines[6:10] + lines[slice_index2:]            
         with i.open('w') as file:
@@ -49,10 +55,20 @@ for i in reports_folder.iterdir():
         first_line = None
         with related_file_with_mult.open('r') as file:
             first_line = file.readlines()[0]
-        with i.open('w') as file:
-            lines1 = lines.copy()
-            lines1.insert(0, first_line)
-            file.writelines(lines1)
+    # on the end of the converted gpss file there are some bad symbols
+
+    for index, line in enumerate(lines):
+        if re.fullmatch(pattern_name_value_block, line.strip()) is not None:
+            print(line)
+            slice_index1 = index
+            continue
+        if re.fullmatch(pattern_facility_block, line.strip()) is not None:
+            slice_index2 = index
+    
+    with i.open('w') as file:
+        lines1 = lines.copy()
+        lines1.insert(0, first_line)
+        file.writelines(lines1)
 
 
 # recreate the folder if necessary
@@ -140,12 +156,12 @@ def prettify_confidence_interval(mean, disp):
 
 # find confidence interval for our data
 for i in raw_columns:
-    framei = pd.DataFrame(columns=["N = 5", "N = 20"])
+    framei = pd.DataFrame(columns=[f"N = {first_n}", f"N = {second_n}"])
     columns = framei.columns
     def create_row(column, accuracy):
         arr = raw_data[column]
         row = []
-        for i in [5, 20]:
+        for i in [first_n, second_n]:
             teta = confidence_interval(accuracy, arr[:i])
             teta = prettify_confidence_interval(teta[0], teta[1])
             row.append(teta)
