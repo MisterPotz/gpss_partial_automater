@@ -52,7 +52,7 @@ for exp in range(amount_of_experiments):
             filled_template += "\n"
     new_file = [filled_template]
     new_file.extend(main_script_lines)
-    new_file_path = Path(folder).joinpath(f"{exp}.txt")
+    new_file_path = Path(folder).joinpath(f"{exp + 1}.txt")
     new_file_path.touch()
     with new_file_path.open('w') as file:
         file.writelines(new_file)

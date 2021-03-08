@@ -19,7 +19,42 @@ reports_folder = Path(path)
 
 print(reports_folder.name)
 
-print([x for x in reports_folder.iterdir()])
+# first must process the output
+
+for i in reports_folder.iterdir():
+    print(i)
+    # remove unnecessary data from file if possible
+    lines = []
+    with i.open('r') as file:
+        lines = file.readlines()
+    slice_index1 = -1
+    slice_index2 = -1
+    pattern_name_value_block = re.compile(".*(NAME).*(VALUE).*")
+    pattern_facility_block = re.compile(".*(FACILITY).*")
+
+    for index, line in enumerate(lines):
+        if re.fullmatch(pattern_name_value_block, line.strip()) is not None:
+            print(line)
+            slice_index1 = index
+            continue
+        if re.fullmatch(pattern_facility_block, line.strip()) is not None:
+            slice_index2 = index
+    if slice_index1 > -1:
+        lines1 = lines[6:10] + lines[slice_index2:]            
+        with i.open('w') as file:
+            file.writelines(lines1)
+    if re.fullmatch(r".*(RMULT).*", lines[0].strip()) is None:
+        order_index = i.name
+        gpss_generated=Path("./gpss_experiment_scripts/")
+        related_file_with_mult = gpss_generated.joinpath(f"{order_index}")
+        first_line = None
+        with related_file_with_mult.open('r') as file:
+            first_line = file.readlines()[0]
+        with i.open('w') as file:
+            lines1 = lines.copy()
+            lines1.insert(0, first_line)
+            file.writelines(lines1)
+
 
 data = pd.DataFrame()
 output_folder = Path("./output/")
