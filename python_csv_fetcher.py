@@ -99,7 +99,7 @@ for index, i in enumerate(reports_folder.iterdir()):
     with open(i, 'r') as report:
         print(f"reading file {i.name}")
         lines = list(map(lambda x: x.strip().replace("\n", ""), report.readlines()))
-        lines = list(filter(lambda x: re.match(r"^[\ ]*(STANOK)[0-9]*[\ ]+", x), lines))
+        lines = list(filter(lambda x: re.match(r"^[\ ]*(STANOK|MACHINE)[0-9]*[\ ]+", x), lines))
         def name_util(x: str):
             split = x.split()
             return (split[0], split[target_column_index])
