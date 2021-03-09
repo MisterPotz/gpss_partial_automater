@@ -1,12 +1,12 @@
 
 
-              GPSS World Simulation Report - Untitled1.20.1
+              GPSS World Simulation Report - Untitled1.23.1
 
 
-                   Tuesday, March 09, 2021 14:34:03  
+                   Tuesday, March 09, 2021 14:35:47  
 
            START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
-                0.000           5831.910    43        5          0
+                0.000           6613.221    43        5          0
 
 
               NAME                       VALUE  
@@ -74,21 +74,21 @@
 
 
 FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
- ROBOT1              75    0.310      24.097  1        0    0    0     0      0
- MACHINE1            75    0.214      16.650  1        0    0    0     0      0
- ROBOT2              75    0.309      24.035  1        0    0    0     0      0
- MACHINE2            75    0.089       6.890  1        0    0    0     0      0
- ROBOT3              75    0.309      24.001  1        0    0    0     0      0
+ ROBOT1              75    0.271      23.856  1        0    0    0     0      0
+ MACHINE1            75    0.195      17.199  1        0    0    0     0      0
+ ROBOT2              75    0.273      24.054  1        0    0    0     0      0
+ MACHINE2            75    0.077       6.829  1        0    0    0     0      0
+ ROBOT3              75    0.271      23.925  1        0    0    0     0      0
 
 
 QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
- ROBOT1_QUEUE        3    0     75     49     0.083      6.427     18.540   0
- ROBOT1_HANDLE       1    0     75      0     0.310     24.097     24.097   0
+ ROBOT1_QUEUE        2    0     75     56     0.049      4.311     17.017   0
+ ROBOT1_HANDLE       1    0     75      0     0.271     23.856     23.856   0
  MACHINE1_QUEUE      1    0     75     75     0.000      0.000      0.000   0
- MACHINE1_HANDLE     1    0     75      0     0.214     16.650     16.650   0
- ROBOT2_QUEUE        1    0     75     60     0.004      0.338      1.692   0
- ROBOT2_HANDLE       1    0     75      0     0.309     24.035     24.035   0
+ MACHINE1_HANDLE     1    0     75      0     0.195     17.199     17.199   0
+ ROBOT2_QUEUE        1    0     75     60     0.004      0.386      1.931   0
+ ROBOT2_HANDLE       1    0     75      0     0.273     24.054     24.054   0
  MACHINE2_QUEUE      1    0     75     75     0.000      0.000      0.000   0
- MACHINE2_HANDLE     1    0     75      0     0.089      6.890      6.890   0
- ROBOT3_QUEUE        1    0     75     59     0.012      0.902      4.227   0
- ROBOT3_HANDLE       1    0     75      0     0.309     24.001     24.001   0
+ MACHINE2_HANDLE     1    0     75      0     0.077      6.829      6.829   0
+ ROBOT3_QUEUE        1    0     75     65     0.005      0.470      3.524   0
+ ROBOT3_HANDLE       1    0     75      0     0.271     23.925     23.925   0
