@@ -24,14 +24,14 @@ $ python gpss_files_generator.py -h
 ### 4.
  Использовать скрипт
 ```bash
-$ python python_csv_fetcher.py reports/ --target_column_index 2
+$ python python_csv_fetcher.py reports/ --target_column_index 2 --n_sizes "5 20"
 ```
 Также можно воспользоваться помощью -h
 Первый аргумент в скрипт - папка с текстовыми отчетами прогона гыпыэсэс.
 Второй аргемент - индекс колонки, которую надо обработать. 2, в данном случае, это UTILIZATION.
-
+Третий - размер массива для расчета средних и дисперсий в зависимости от размера выборки (по дефолту "5 20", для просто отчета можно не менять)
 ### 5.
  Выводы в отчёт будут в папке outputs.
 
 Использован Python 3.7 (3.8 тоже должен работать), все библиотеки стандартные, которые идут в комплекте с Anaconda.
-Скачать Anaconda можно [здесь](https://www.anaconda.com/products/individual)
+Скачать Anaconda можно [здесь](https://www.anaconda.com/products/individual)ы

@@ -13,11 +13,15 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('path', help='Path to the GPSS reports folders')
 parser.add_argument('--target_column_index', dest="target_column_index", help='Index of statistics target column (UTILIZATION by default is 2)', type=int, default=2)
+parser.add_argument("--n_sizes", dest="n_sizes", help="Sizes of dataset, by default is '5 20'", type=str, default="5 20")
 
 args = parser.parse_args()
 
 path = args.path
 target_column_index = args.target_column_index
+n_sizes = args.n_sizes.split()
+first_n = int(n_sizes[0])
+second_n = int(n_sizes[1])
 
 reports_folder = Path(path)
 
@@ -126,13 +130,13 @@ with raw_report_path.open('r') as file:
     raw_data = pd.read_csv(file, sep=',')
 raw_columns=raw_data.columns
 means_disps = \
-    pd.DataFrame(columns=["Оценка мат. ожидания N = 5", 
-    "Оценка дисперсии N = 5", "Оценка мат. ожидания N = 20", "Оценка дисперсии N = 20"])
+    pd.DataFrame(columns=[f"Оценка мат. ожидания N = {first_n}", 
+    f"Оценка дисперсии N = {first_n}", f"Оценка мат. ожидания N = {second_n}", f"Оценка дисперсии N = {second_n}"])
 
 for i in raw_columns:
     arr = raw_data[i]
     row = []
-    for g in (5, 20):
+    for g in (first_n, second_n):
         arrg = arr[:g]
         meang, dispg = mean_disp(arrg)
         row.extend((meang, dispg))
@@ -150,6 +154,8 @@ conf = pd.read_csv("confidence_interval.csv", index_col=0)
 def find_t(confidence_table, N, accuracy):
     acc = accuracy / 2
     v = N - 1
+    if v == 0:
+        raise argparse.ArgumentError(None, f"size of the given dataset if too small {v}")
     t = confidence_table.loc[ confidence_table.index == v, confidence_table.columns.astype('float64') == acc ].to_numpy()[0][0]
     return t
 
