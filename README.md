@@ -1,5 +1,16 @@
 ## Usage
 
+### Libs.
+Чтобы установить нужные Python-библиотеки, достаточно либо иметь Python, установленный через Anaconda, либо через терминал вбить команду баша
+```bash
+ bash install_libs.sh
+```
+либо, если нет баша, просто по порядку ввести в терминал по порядку:
+```
+pip install numpy 
+pip install pandas
+```
+
 ### 1. 
 Написать прогу на GPSS в файлик типа `gornostaev_4_gpss_no_mult.txt`.
 
@@ -33,5 +44,4 @@ $ python python_csv_fetcher.py reports/ --target_column_index 2 --n_sizes "5 20"
 ### 5.
  Выводы в отчёт будут в папке outputs.
 
-Использован Python 3.7 (3.8 тоже должен работать), все библиотеки стандартные, которые идут в комплекте с Anaconda.
 Скачать Anaconda можно [здесь](https://www.anaconda.com/products/individual)ы
