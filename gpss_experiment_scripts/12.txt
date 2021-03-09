@@ -1,4 +1,4 @@
-RMULT 1534550,554117,3112765,4491197
+RMULT 4478086,9892680,5092503,1842502
 
 START 75  ; целевая переменная, посел становления которой 0 заканчивается симуляция
 
@@ -17,7 +17,7 @@ DEPART FMS_IN
 QUEUE STANOK1_IN
 SEIZE STANOK1
 DEPART STANOK1_IN
-ADVANCE (NORMAL(2,7,2)) ; обработка на первом станке
+ADVANCE (ABS(NORMAL(2,7,2))) ; обработка на первом станке
 QUEUE STANOK1_OUT
 RELEASE STANOK1
 DEPART STANOK1_OUT

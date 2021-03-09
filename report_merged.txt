@@ -1,0 +1,372 @@
+
+
+              GPSS World Simulation Report - Untitled1.60.1
+
+
+                   Tuesday, March 09, 2021 15:54:18  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000          12860.392    47        4          0
+
+
+              NAME                       VALUE  
+          FMS_IN                      10003.000
+          FMS_OUT                     10014.000
+          ROBOT                       10004.000
+          STANOK1                     10006.000
+          STANOK1_IN                  10005.000
+          STANOK1_OUT                 10007.000
+          STANOK2                     10009.000
+          STANOK2_IN                  10008.000
+          STANOK2_OUT                 10010.000
+          STANOK3                     10012.000
+          STANOK3_IN                  10011.000
+          STANOK3_OUT                 10013.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE            75             0       0
+                    2    QUEUE               75             0       0
+                    3    SEIZE               75             0       0
+                    4    ADVANCE             75             0       0
+                    5    ADVANCE             75             0       0
+                    6    ADVANCE             75             0       0
+                    7    RELEASE             75             0       0
+                    8    DEPART              75             0       0
+                    9    QUEUE               75             0       0
+                   10    SEIZE               75             0       0
+                   11    DEPART              75             0       0
+                   12    ADVANCE             75             0       0
+                   13    QUEUE               75             0       0
+                   14    RELEASE             75             0       0
+                   15    DEPART              75             0       0
+                   16    SEIZE               75             0       0
+                   17    ADVANCE             75             0       0
+                   18    ADVANCE             75             0       0
+                   19    ADVANCE             75             0       0
+                   20    RELEASE             75             0       0
+                   21    QUEUE               75             0       0
+                   22    SEIZE               75             0       0
+                   23    DEPART              75             0       0
+                   24    ADVANCE             75             0       0
+                   25    QUEUE               75             0       0
+                   26    RELEASE             75             0       0
+                   27    DEPART              75             0       0
+                   28    SEIZE               75             0       0
+                   29    ADVANCE             75             0       0
+                   30    ADVANCE             75             0       0
+                   31    ADVANCE             75             0       0
+                   32    RELEASE             75             0       0
+                   33    QUEUE               75             0       0
+                   34    SEIZE               75             0       0
+                   35    DEPART              75             0       0
+                   36    ADVANCE             75             0       0
+                   37    QUEUE               75             0       0
+                   38    RELEASE             75             0       0
+                   39    DEPART              75             0       0
+                   40    QUEUE               75             0       0
+                   41    SEIZE               75             0       0
+                   42    ADVANCE             75             0       0
+                   43    ADVANCE             75             0       0
+                   44    ADVANCE             75             0       0
+                   45    RELEASE             75             0       0
+                   46    DEPART              75             0       0
+                   47    TERMINATE           75             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ ROBOT              300    0.513      22.000  1        0    0    0     0      0
+ STANOK1             75    0.043       7.296  1        0    0    0     0      0
+ STANOK2             75    0.068      11.698  1        0    0    0     0      0
+ STANOK3             75    0.116      19.811  1        0    0    0     0      0
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ FMS_IN              3    0     75      0     0.219     37.557     37.557   0
+ STANOK1_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK1_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK3_IN          1    0     75     72     0.001      0.115      2.863   0
+ STANOK3_OUT         1    0     75     75     0.000      0.000      0.000   0
+ FMS_OUT             2    0     75      0     0.210     35.954     35.954   0
+<>?
+
+
+              GPSS World Simulation Report - Untitled1.61.1
+
+
+                   Tuesday, March 09, 2021 15:55:05  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           9907.877    47        4          0
+
+
+              NAME                       VALUE  
+          FMS_IN                      10003.000
+          FMS_OUT                     10014.000
+          ROBOT                       10004.000
+          STANOK1                     10006.000
+          STANOK1_IN                  10005.000
+          STANOK1_OUT                 10007.000
+          STANOK2                     10009.000
+          STANOK2_IN                  10008.000
+          STANOK2_OUT                 10010.000
+          STANOK3                     10012.000
+          STANOK3_IN                  10011.000
+          STANOK3_OUT                 10013.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE            75             0       0
+                    2    QUEUE               75             0       0
+                    3    SEIZE               75             0       0
+                    4    ADVANCE             75             0       0
+                    5    ADVANCE             75             0       0
+                    6    ADVANCE             75             0       0
+                    7    RELEASE             75             0       0
+                    8    DEPART              75             0       0
+                    9    QUEUE               75             0       0
+                   10    SEIZE               75             0       0
+                   11    DEPART              75             0       0
+                   12    ADVANCE             75             0       0
+                   13    QUEUE               75             0       0
+                   14    RELEASE             75             0       0
+                   15    DEPART              75             0       0
+                   16    SEIZE               75             0       0
+                   17    ADVANCE             75             0       0
+                   18    ADVANCE             75             0       0
+                   19    ADVANCE             75             0       0
+                   20    RELEASE             75             0       0
+                   21    QUEUE               75             0       0
+                   22    SEIZE               75             0       0
+                   23    DEPART              75             0       0
+                   24    ADVANCE             75             0       0
+                   25    QUEUE               75             0       0
+                   26    RELEASE             75             0       0
+                   27    DEPART              75             0       0
+                   28    SEIZE               75             0       0
+                   29    ADVANCE             75             0       0
+                   30    ADVANCE             75             0       0
+                   31    ADVANCE             75             0       0
+                   32    RELEASE             75             0       0
+                   33    QUEUE               75             0       0
+                   34    SEIZE               75             0       0
+                   35    DEPART              75             0       0
+                   36    ADVANCE             75             0       0
+                   37    QUEUE               75             0       0
+                   38    RELEASE             75             0       0
+                   39    DEPART              75             0       0
+                   40    QUEUE               75             0       0
+                   41    SEIZE               75             0       0
+                   42    ADVANCE             75             0       0
+                   43    ADVANCE             75             0       0
+                   44    ADVANCE             75             0       0
+                   45    RELEASE             75             0       0
+                   46    DEPART              75             0       0
+                   47    TERMINATE           75             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ ROBOT              300    0.666      21.985  1        0    0    0     0      0
+ STANOK1             75    0.052       6.885  1        0    0    0     0      0
+ STANOK2             75    0.091      11.997  1        0    0    0     0      0
+ STANOK3             75    0.151      19.977  1        0    0    0     0      0
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ FMS_IN              3    0     75      0     0.375     49.512     49.512   0
+ STANOK1_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK1_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK3_IN          1    0     75     71     0.001      0.101      1.889   0
+ STANOK3_OUT         1    0     75     75     0.000      0.000      0.000   0
+ FMS_OUT             3    0     75      0     0.376     49.685     49.685   0
+<>?
+
+
+              GPSS World Simulation Report - Untitled1.62.1
+
+
+                   Tuesday, March 09, 2021 15:55:21  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000          11736.170    47        4          0
+
+
+              NAME                       VALUE  
+          FMS_IN                      10003.000
+          FMS_OUT                     10014.000
+          ROBOT                       10004.000
+          STANOK1                     10006.000
+          STANOK1_IN                  10005.000
+          STANOK1_OUT                 10007.000
+          STANOK2                     10009.000
+          STANOK2_IN                  10008.000
+          STANOK2_OUT                 10010.000
+          STANOK3                     10012.000
+          STANOK3_IN                  10011.000
+          STANOK3_OUT                 10013.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE            75             0       0
+                    2    QUEUE               75             0       0
+                    3    SEIZE               75             0       0
+                    4    ADVANCE             75             0       0
+                    5    ADVANCE             75             0       0
+                    6    ADVANCE             75             0       0
+                    7    RELEASE             75             0       0
+                    8    DEPART              75             0       0
+                    9    QUEUE               75             0       0
+                   10    SEIZE               75             0       0
+                   11    DEPART              75             0       0
+                   12    ADVANCE             75             0       0
+                   13    QUEUE               75             0       0
+                   14    RELEASE             75             0       0
+                   15    DEPART              75             0       0
+                   16    SEIZE               75             0       0
+                   17    ADVANCE             75             0       0
+                   18    ADVANCE             75             0       0
+                   19    ADVANCE             75             0       0
+                   20    RELEASE             75             0       0
+                   21    QUEUE               75             0       0
+                   22    SEIZE               75             0       0
+                   23    DEPART              75             0       0
+                   24    ADVANCE             75             0       0
+                   25    QUEUE               75             0       0
+                   26    RELEASE             75             0       0
+                   27    DEPART              75             0       0
+                   28    SEIZE               75             0       0
+                   29    ADVANCE             75             0       0
+                   30    ADVANCE             75             0       0
+                   31    ADVANCE             75             0       0
+                   32    RELEASE             75             0       0
+                   33    QUEUE               75             0       0
+                   34    SEIZE               75             0       0
+                   35    DEPART              75             0       0
+                   36    ADVANCE             75             0       0
+                   37    QUEUE               75             0       0
+                   38    RELEASE             75             0       0
+                   39    DEPART              75             0       0
+                   40    QUEUE               75             0       0
+                   41    SEIZE               75             0       0
+                   42    ADVANCE             75             0       0
+                   43    ADVANCE             75             0       0
+                   44    ADVANCE             75             0       0
+                   45    RELEASE             75             0       0
+                   46    DEPART              75             0       0
+                   47    TERMINATE           75             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ ROBOT              300    0.564      22.053  1        0    0    0     0      0
+ STANOK1             75    0.044       6.872  1        0    0    0     0      0
+ STANOK2             75    0.078      12.205  1        0    0    0     0      0
+ STANOK3             75    0.126      19.775  1        0    0    0     0      0
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ FMS_IN              3    0     75      0     0.196     30.612     30.612   0
+ STANOK1_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK1_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK3_IN          1    0     75     68     0.001      0.101      1.087   0
+ STANOK3_OUT         1    0     75     75     0.000      0.000      0.000   0
+ FMS_OUT             3    0     75      0     0.192     30.006     30.006   0
+<>?
+
+
+              GPSS World Simulation Report - Untitled1.63.1
+
+
+                   Tuesday, March 09, 2021 15:55:39  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000          10234.570    47        4          0
+
+
+              NAME                       VALUE  
+          FMS_IN                      10003.000
+          FMS_OUT                     10014.000
+          ROBOT                       10004.000
+          STANOK1                     10006.000
+          STANOK1_IN                  10005.000
+          STANOK1_OUT                 10007.000
+          STANOK2                     10009.000
+          STANOK2_IN                  10008.000
+          STANOK2_OUT                 10010.000
+          STANOK3                     10012.000
+          STANOK3_IN                  10011.000
+          STANOK3_OUT                 10013.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE            75             0       0
+                    2    QUEUE               75             0       0
+                    3    SEIZE               75             0       0
+                    4    ADVANCE             75             0       0
+                    5    ADVANCE             75             0       0
+                    6    ADVANCE             75             0       0
+                    7    RELEASE             75             0       0
+                    8    DEPART              75             0       0
+                    9    QUEUE               75             0       0
+                   10    SEIZE               75             0       0
+                   11    DEPART              75             0       0
+                   12    ADVANCE             75             0       0
+                   13    QUEUE               75             0       0
+                   14    RELEASE             75             0       0
+                   15    DEPART              75             0       0
+                   16    SEIZE               75             0       0
+                   17    ADVANCE             75             0       0
+                   18    ADVANCE             75             0       0
+                   19    ADVANCE             75             0       0
+                   20    RELEASE             75             0       0
+                   21    QUEUE               75             0       0
+                   22    SEIZE               75             0       0
+                   23    DEPART              75             0       0
+                   24    ADVANCE             75             0       0
+                   25    QUEUE               75             0       0
+                   26    RELEASE             75             0       0
+                   27    DEPART              75             0       0
+                   28    SEIZE               75             0       0
+                   29    ADVANCE             75             0       0
+                   30    ADVANCE             75             0       0
+                   31    ADVANCE             75             0       0
+                   32    RELEASE             75             0       0
+                   33    QUEUE               75             0       0
+                   34    SEIZE               75             0       0
+                   35    DEPART              75             0       0
+                   36    ADVANCE             75             0       0
+                   37    QUEUE               75             0       0
+                   38    RELEASE             75             0       0
+                   39    DEPART              75             0       0
+                   40    QUEUE               75             0       0
+                   41    SEIZE               75             0       0
+                   42    ADVANCE             75             0       0
+                   43    ADVANCE             75             0       0
+                   44    ADVANCE             75             0       0
+                   45    RELEASE             75             0       0
+                   46    DEPART              75             0       0
+                   47    TERMINATE           75             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ ROBOT              300    0.646      22.037  1        0    0    0     0      0
+ STANOK1             75    0.053       7.208  1        0    0    0     0      0
+ STANOK2             75    0.087      11.933  1        0    0    0     0      0
+ STANOK3             75    0.146      19.960  1        0    0    0     0      0
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ FMS_IN              2    0     75      0     0.262     35.790     35.790   0
+ STANOK1_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK1_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_IN          1    0     75     75     0.000      0.000      0.000   0
+ STANOK2_OUT         1    0     75     75     0.000      0.000      0.000   0
+ STANOK3_IN          1    0     75     70     0.001      0.131      1.972   0
+ STANOK3_OUT         1    0     75     75     0.000      0.000      0.000   0
+ FMS_OUT             3    0     75      0     0.274     37.364     37.364   0
+
